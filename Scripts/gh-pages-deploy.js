@@ -19,7 +19,7 @@ const fs = require("fs");
     console.log("Successfully deployed, check your settings");
   } catch (e) {
     // eslint-disable-next-line no-console
-    await execa("git", ["checkout", "-f", "main"]);
+    await execa("git", ["checkout", "-f", "website"]);
     await execa("git", ["branch", "-D", "gh-pages"]);
     console.log(e.message);
     process.exit(1);
