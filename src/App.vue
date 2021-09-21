@@ -89,10 +89,12 @@
         <!-- <model-obj  :src="`${publicPath}depth2pcd_GT_${objType}.obj`" :height="600" :width="600" > </model-obj> -->
       </div>
     </div>
-    <h2> <p style="text-align:left;">Acknowledgements</p></h2>
-    <p style="text-align:left;">This Project is supported by the following.</p>
-    <div style="width: 20%"><v-img :src="`${publicPath}toronto.jpg`" contain></v-img></div>
-    <div style="width: 20%"><v-img :src="`${publicPath}vector.jpg`" contain></v-img></div>  
+    <div class="float-container">
+      <h2> <p style="text-align:left;">Acknowledgements</p></h2>
+      <p style="text-align:left;">This Project is supported by the following.</p>
+      <div class="float-mini"><v-img :src="`${publicPath}toronto.jpg`" contain></v-img></div>
+      <div class="float-mini"><v-img :src="`${publicPath}vector.jpg`" contain></v-img></div> 
+    </div> 
   </div>
 
   
@@ -146,6 +148,12 @@ p {
     width: 100%;
     float: left;
 }  
+.float-mini {
+    width: 20%;
+    float: left;
+    margin-left: 5rem;
+    margin-right: 5rem;
+}
 .triangle {
     width: 0;
     height: 0;
