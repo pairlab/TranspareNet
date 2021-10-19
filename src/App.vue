@@ -1,6 +1,6 @@
 <template>
   <div id="app" >
-    <div>
+    <div id="abs">
     <h1>Seeing Glass: Joint Point-Cloud and Depth Completion for Transparent Objects</h1>
     <p>
       <a href="">Haoping Xu</a>, 
@@ -12,11 +12,14 @@
     </p>
     <p style="text-align:left">
       <em>
-        <a href="https://openreview.net/forum?id=tCfLLiP7vje"> CoRL 2021 Paper</a>
+        <a href="https://openreview.net/forum?id=tCfLLiP7vje"> CoRL 2021 Paper</a>  <a href="https://github.com/pairlab/TranspareNet">Code</a>  <a href="https://doi.org/10.5683/SP3/ZJJAJ3">Dataset</a>
       </em>
     </p>
     <h2> Abstract </h2>
-    <p style="text-align:left;"> The basis of many object manipulation algorithms is RGB-D input. Yet,commodity RGB-D sensors can only provide distorted depth maps for a wide range of transparent objects due light refraction and absorption. To tackle the perception challenges posed by transparent objects, we propose TranspareNet, a joint point cloud and depth completion method, with the ability to complete the depth of transparent objects in cluttered and complex scenes, even with partially filled fluid contents within the vessels. To address the shortcomings of existing transparent object data collection schemes in literature, we also propose an automated dataset creation workflow that consists of robot-controlled image collection and vision-based automatic annotation. Through this automated workflow, we created Transparent Object Depth Dataset (TODD), which consists of nearly 15000 RGB-D images. Our experimental evaluation demonstrates that TranspareNet outperforms existing state-of-the-art depth completion methods on multiple datasets, including ClearGrasp, and that it also handles cluttered scenes when trained on TODD. </p>
+    <p style="text-align:left;"> The basis of many object manipulation algorithms is RGB-D input. Yet,commodity RGB-D sensors can only provide distorted depth maps for a wide range of transparent objects due light refraction and absorption. To tackle the perception challenges posed by transparent objects, we propose TranspareNet, a joint point cloud and depth completion method, with the ability to complete the depth of transparent objects in cluttered and complex scenes, even with partially filled fluid contents within the vessels. To address the shortcomings of existing transparent object data collection schemes in literature, we also propose an automated dataset creation workflow that consists of robot-controlled image collection and vision-based automatic annotation. Through this automated workflow, we created Toronto Transparent Object Depth Dataset (TODD), which consists of nearly 15000 RGB-D images. Our experimental evaluation demonstrates that TranspareNet outperforms existing state-of-the-art depth completion methods on multiple datasets, including ClearGrasp, and that it also handles cluttered scenes when trained on TODD. </p>
+    <div style="width:60%; margin-left: auto;
+  margin-right: auto;"><v-img :src="`${publicPath}main.svg`" contain></v-img></div>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/vvKae4wUGU8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
     <v-banner single-line>
     <h3> <p style="text-align:left;">Objects in Dataset </p>  <div id="example-5">
@@ -94,6 +97,8 @@
       <p style="text-align:left;">This Project is supported by the following.</p>
       <div class="float-mini"><v-img :src="`${publicPath}toronto.jpg`" contain></v-img></div>
       <div class="float-mini"><v-img :src="`${publicPath}vector.jpg`" contain></v-img></div> 
+      <div class="float-minih"><v-img :src="`${publicPath}pair.png`" contain></v-img></div> 
+      <div class="float-minih"><v-img :src="`${publicPath}matter.svg`" contain></v-img></div> 
     </div> 
   </div>
 
@@ -130,7 +135,11 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
-  max-width: 42rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+#abs {
+  max-width: 60rem;
   margin-left: auto;
   margin-right: auto;
 }
@@ -145,14 +154,20 @@ p {
     width: 100%;
 }
 .float-child {
-    width: 100%;
+    width: 33%;
     float: left;
 }  
 .float-mini {
-    width: 20%;
+    width: 5%;
     float: left;
-    margin-left: 5rem;
-    margin-right: 5rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
+.float-minih {
+    width: 10%;
+    float: left;
+    margin-left: 2rem;
+    margin-right: 2rem;
 }
 .triangle {
     width: 0;
