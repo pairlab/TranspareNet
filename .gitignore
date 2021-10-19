@@ -2,9 +2,16 @@
 __pycache__/
 *.py[cod]
 *$py.class
+.idea/
 
 # C extensions
 *.so
+
+# Dataset
+grnet_point_cloud_completion/datasets/frankascanv2/
+
+# Checkpoints
+*.pth
 
 # Distribution / packaging
 .Python
