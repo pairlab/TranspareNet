@@ -14,6 +14,7 @@
     "three": "^0.130.1",
     "vue": "^2.6.11",
     "vue-3d-model": "^1.4.0",
+    "vue-select": "^3.15.1",
     "vue-youtube": "^1.4.0",
     "vue-youtube-embed": "^2.2.2",
     "vuetify": "^2.4.0"

@@ -1,6 +1,6 @@
 <template>
   <div id="app" >
-    <div id="abs">
+    <div id="abs" style="dispaly: block">
     <h1>Seeing Glass: Joint Point-Cloud and Depth Completion for Transparent Objects</h1>
     <p>
       <a href="">Haoping Xu</a>, 
@@ -10,17 +10,23 @@
       <a href="http://www.cs.toronto.edu/~florian/">Florian Shkurti</a>, 
       <a href="https://animesh.garg.tech/">Animesh Garg</a>
     </p>
-    <p style="text-align:left">
-      <em>
-        <a href="https://openreview.net/forum?id=tCfLLiP7vje"> CoRL 2021 Paper</a>  <a href="https://github.com/pairlab/TranspareNet">Code</a>  <a href="https://doi.org/10.5683/SP3/ZJJAJ3">Dataset</a>
-      </em>
-    </p>
+    
     <h2> Abstract </h2>
     <p style="text-align:left;"> The basis of many object manipulation algorithms is RGB-D input. Yet,commodity RGB-D sensors can only provide distorted depth maps for a wide range of transparent objects due light refraction and absorption. To tackle the perception challenges posed by transparent objects, we propose TranspareNet, a joint point cloud and depth completion method, with the ability to complete the depth of transparent objects in cluttered and complex scenes, even with partially filled fluid contents within the vessels. To address the shortcomings of existing transparent object data collection schemes in literature, we also propose an automated dataset creation workflow that consists of robot-controlled image collection and vision-based automatic annotation. Through this automated workflow, we created Toronto Transparent Object Depth Dataset (TODD), which consists of nearly 15000 RGB-D images. Our experimental evaluation demonstrates that TranspareNet outperforms existing state-of-the-art depth completion methods on multiple datasets, including ClearGrasp, and that it also handles cluttered scenes when trained on TODD. </p>
-    <div style="width:60%; margin-left: auto;
-  margin-right: auto;"><v-img :src="`${publicPath}main.svg`" contain></v-img></div>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/vvKae4wUGU8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+    <div class="float-container">
+        <div class="float-child"><v-btn class="ma-2" href="https://openreview.net/forum?id=tCfLLiP7vje"> Paper</v-btn> </div>
+        <div class="float-child"><v-btn class="ma-2" href="https://github.com/pairlab/TranspareNet"> Code</v-btn></div>
+        <div class="float-child"><v-btn class="ma-2" href="https://doi.org/10.5683/SP3/ZJJAJ3"> Dataset</v-btn></div>
     </div>
+    <div class="float-container">
+      <div class="float-child-half"> <h3> TranspareNet </h3> <v-img :src="`${publicPath}main.svg`" contain></v-img></div>
+      <div class="float-child-half">
+        <h3> Dataset collection</h3>
+        <iframe width="600" height="380" src="https://www.youtube.com/embed/_HIetJ4mdlg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+      </div>
+    </div>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
     <v-banner single-line>
     <h3> <p style="text-align:left;">Objects in Dataset </p>  <div id="example-5">
       
@@ -40,8 +46,8 @@
 <br style="clear:both" />
     <v-banner single-line>
     <h3> <p style="text-align:left;"> Dataset Capture Time-lapse </p></h3>
-    <span>Object Type:</span>
-      <select v-model="objType">
+    <span STYLE="font-size:18.0pt" >Select Object Type:</span>
+      <select v-model="objType" STYLE="font-size:18.0pt">
         <option value=0>Beaker 0</option>
         <option value="1">Beaker 1</option>
         <option value="2">Beaker 2</option>
@@ -53,7 +59,7 @@
     <div class="float-container">
     <div id="imageGif"  class="float-child">
       <h4> RGB </h4>
-      <gif-viewer v-show="objType == 0" file="image0.gif"></gif-viewer>
+      <gif-viewer width="400" height="400" v-show="objType == 0" file="image0.gif"></gif-viewer>
       <gif-viewer v-show="objType == 1" file="image1.gif"></gif-viewer>
       <gif-viewer  v-show="objType == 2" file="image2.gif"></gif-viewer>
       <gif-viewer v-show="objType == 3 || objType == 5" file="image53.gif"></gif-viewer>
@@ -79,16 +85,16 @@
       <div class="float-container">
       <div class="float-child">
         <h4> Object CAD Model </h4>
-        <model-stl :src="`${publicPath}${objType}.stl`" :height="600" :width="600" :cameraPosition=scale> </model-stl>
+        <model-stl :src="`${publicPath}${objType}.stl`" :height="400" :width="400" :cameraPosition=scale> </model-stl>
       </div>
       <div class="float-child">
         <h4> Raw Depth Point Cloud</h4>
-        <model-ply  :src="`${publicPath}depth2pcd_${objType}.ply`" :height="600" :width="600" > </model-ply>
+        <model-ply  :src="`${publicPath}depth2pcd_${objType}.ply`" :height="400" :width="400" > </model-ply>
         <!-- <model-obj  :src="`${publicPath}depth2pcd_${objType}.obj`" :height="600" :width="600" > </model-obj> -->
       </div>
       <div class="float-child">
         <h4> Ground Truth Depth Point Cloud</h4>
-        <model-ply  :src="`${publicPath}depth2pcd_GT_${objType}.ply`" :height="600" :width="600" > </model-ply>
+        <model-ply  :src="`${publicPath}depth2pcd_GT_${objType}.ply`" :height="400" :width="400" > </model-ply>
         <!-- <model-obj  :src="`${publicPath}depth2pcd_GT_${objType}.obj`" :height="600" :width="600" > </model-obj> -->
       </div>
     </div>
@@ -118,6 +124,7 @@ export default {
   data (){
     return {
       objType: 0,
+      items:[{name:"Beaker 0", index:0}, {name:"Beaker 1", index:1}, {name:"Beaker 2", index:2},{name:"Flask 0", index:3}, {name:"Flask 1", index:4}, {name:"Falsk 2", index:5}] ,
       publicPath: process.env.BASE_URL,
       scale: { x: 200, y: 0, z: -3 },
       videoId: "https://www.youtube.com/watch?v=mfL8tZUKRW4",
@@ -137,17 +144,22 @@ export default {
   margin-top: 60px;
   margin-left: auto;
   margin-right: auto;
+  max-width: 80rem;
 }
 #abs {
-  max-width: 60rem;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: auto;
+  display: block;
 }
 p {
       margin-bottom: 1rem;
 }
 .float-container {
     padding: 0px;
+    display: block;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 }
 .container {
     height: 100%;
@@ -157,6 +169,11 @@ p {
     width: 33%;
     float: left;
 }  
+.float-child-half {
+    width: 50%;
+    height: 400px;
+    float: left;
+} 
 .float-mini {
     width: 5%;
     float: left;
@@ -187,4 +204,6 @@ p {
 .right {
     border-color: transparent red transparent transparent;
 }
+
+
 </style>
