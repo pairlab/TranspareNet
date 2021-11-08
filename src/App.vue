@@ -59,42 +59,42 @@
     <div class="float-container">
     <div id="imageGif"  class="float-child">
       <h4> RGB </h4>
-      <gif-viewer width="400" height="400" v-show="objType == 0" file="image0.gif"></gif-viewer>
-      <gif-viewer v-show="objType == 1" file="image1.gif"></gif-viewer>
-      <gif-viewer  v-show="objType == 2" file="image2.gif"></gif-viewer>
-      <gif-viewer v-show="objType == 3 || objType == 5" file="image53.gif"></gif-viewer>
-      <gif-viewer v-show="objType == 4" file="image24.gif"></gif-viewer>
+      <gif-viewer width="320" height="200" v-show="objType == 0" file="image0.gif"></gif-viewer>
+      <gif-viewer width="320" height="200" v-show="objType == 1" file="image1.gif"></gif-viewer>
+      <gif-viewer width="320" height="200" v-show="objType == 2" file="image2.gif"></gif-viewer>
+      <gif-viewer width="320" height="200" v-show="objType == 3 || objType == 5" file="image53.gif"></gif-viewer>
+      <gif-viewer width="320" height="200" v-show="objType == 4" file="image24.gif"></gif-viewer>
     </div>
     <div id="depthGif"  class="float-child">
       <h4> Sensor Raw Depth </h4>
-      <gif-viewer v-show="objType == 0" file="depth0.gif"></gif-viewer>
-      <gif-viewer v-show="objType == 1" file="depth1.gif"></gif-viewer>
-      <gif-viewer v-show="objType == 2" file="depth2.gif"></gif-viewer>
-      <gif-viewer v-show="objType == 3 || objType == 5" file="depth53.gif"></gif-viewer>
-      <gif-viewer v-show="objType == 4" file="depth24.gif"></gif-viewer>
+      <gif-viewer width="320" height="200" v-show="objType == 0" file="depth0.gif"></gif-viewer>
+      <gif-viewer width="320" height="200" v-show="objType == 1" file="depth1.gif"></gif-viewer>
+      <gif-viewer width="320" height="200" v-show="objType == 2" file="depth2.gif"></gif-viewer>
+      <gif-viewer width="320" height="200" v-show="objType == 3 || objType == 5" file="depth53.gif"></gif-viewer>
+      <gif-viewer width="320" height="200" v-show="objType == 4" file="depth24.gif"></gif-viewer>
     </div>
     <div id="depthGTGif"  class="float-child">
       <h4> Ground Truth Depth </h4>
-      <gif-viewer v-show="objType== 0" file="depthgt0.gif"></gif-viewer>
-      <gif-viewer v-show="objType == 1" file="depthgt1.gif"></gif-viewer>
-      <gif-viewer v-show="objType == 2" file="depthgt2.gif"></gif-viewer>
-      <gif-viewer v-show="objType == 3 || objType == 5" file="depthgt53.gif"></gif-viewer>
-      <gif-viewer v-show="objType == 4" file="depthgt24.gif"></gif-viewer>
+      <gif-viewer width="320" height="200" v-show="objType== 0" file="depthgt0.gif"></gif-viewer>
+      <gif-viewer width="320" height="200" v-show="objType == 1" file="depthgt1.gif"></gif-viewer>
+      <gif-viewer width="320" height="200" v-show="objType == 2" file="depthgt2.gif"></gif-viewer>
+      <gif-viewer width="320" height="200" v-show="objType == 3 || objType == 5" file="depthgt53.gif"></gif-viewer>
+      <gif-viewer width="320" height="200" v-show="objType == 4" file="depthgt24.gif"></gif-viewer>
     </div>
     </div>
       <div class="float-container">
       <div class="float-child">
         <h4> Object CAD Model </h4>
-        <model-stl :src="`${publicPath}${objType}.stl`" :height="400" :width="400" :cameraPosition=scale> </model-stl>
+        <model-stl :src="`${publicPath}${objType}.stl`" :height="320" :width="320" :cameraPosition=scale> </model-stl>
       </div>
       <div class="float-child">
         <h4> Raw Depth Point Cloud</h4>
-        <model-ply  :src="`${publicPath}depth2pcd_${objType}.ply`" :height="400" :width="400" > </model-ply>
+        <model-ply  :src="`${publicPath}depth2pcd_${objType}.ply`" :height="320" :width="320" > </model-ply>
         <!-- <model-obj  :src="`${publicPath}depth2pcd_${objType}.obj`" :height="600" :width="600" > </model-obj> -->
       </div>
       <div class="float-child">
         <h4> Ground Truth Depth Point Cloud</h4>
-        <model-ply  :src="`${publicPath}depth2pcd_GT_${objType}.ply`" :height="400" :width="400" > </model-ply>
+        <model-ply  :src="`${publicPath}depth2pcd_GT_${objType}.ply`" :height="320" :width="320" > </model-ply>
         <!-- <model-obj  :src="`${publicPath}depth2pcd_GT_${objType}.obj`" :height="600" :width="600" > </model-obj> -->
       </div>
     </div>
