@@ -19,6 +19,9 @@
         <div class="float-child"><v-btn class="ma-2" href="https://github.com/pairlab/TranspareNet"> Code</v-btn></div>
         <div class="float-child"><v-btn class="ma-2" href="https://doi.org/10.5683/SP3/ZJJAJ3"> Dataset</v-btn></div>
     </div>
+    <div style="margin-top:6rem; margin-bottom:6rem">
+    <iframe width="1020" height="630" src="https://www.youtube.com/embed/ELzNzE48FFY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
     <div class="float-container">
       <div class="float-child-half"> <h3> TranspareNet </h3> <v-img :src="`${publicPath}main.svg`" contain></v-img></div>
       <div class="float-child-half">
@@ -158,8 +161,8 @@ p {
 .float-container {
     padding: 0px;
     display: block;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
 }
 .container {
     height: 100%;
