@@ -11,17 +11,17 @@
   <a href="#Explorer">Dataset Explorer</a>
   <a href="#Acknowledgements">Acknowledgements</a>
 </div>
-    <h1 style="color:#4484CE; margin-left: 70px; margin-top: 40px; margin-right: 70px;"> Seeing Glass: Joint Point-Cloud and Depth Completion for Transparent Objects</h1>
+    <h1 style="color:#4484CE; margin-left: 70px; margin-top: 40px; margin-right: 70px;font-size:2.5vw"> Seeing Glass: Joint Point-Cloud and Depth Completion for Transparent Objects</h1>
     <p style="color:#565656;">
-      <a style="color:#565656;" href="https://www.linkedin.com/in/haoping-xu-0b3b44a4/">Haoping Xu</a><sup>* 1,2</sup>, 
-      <a style="color:#565656;" href="https://www.linkedin.com/in/yi-ru-helen-wang/">Yi Ru Wang</a><sup>* 1,2</sup>, 
-      <a style="color:#565656;" href="">Sagi Eppel</a><sup>1,2</sup>, 
-      <a style="color:#565656;" href="https://www.matter.toronto.edu/basic-content-page/about-alan">Alan Aspuru-Guzik</a><sup>1,2</sup>, 
-      <a style="color:#565656;" href="http://www.cs.toronto.edu/~florian/">Florian Shkurti</a><sup>1,2</sup>, 
-      <a style="color:#565656;" href="https://animesh.garg.tech/">Animesh Garg</a><sup>1,2,3</sup>
+      <a style="color:#565656;font-size:1.5vw" href="https://www.linkedin.com/in/haoping-xu-0b3b44a4/">Haoping Xu</a><sup>* 1,2</sup>, 
+      <a style="color:#565656;font-size:1.5vw" href="https://www.linkedin.com/in/yi-ru-helen-wang/">Yi Ru Wang</a><sup>* 1,2</sup>, 
+      <a style="color:#565656;font-size:1.5vw" href="">Sagi Eppel</a><sup>1,2</sup>, 
+      <a style="color:#565656;font-size:1.5vw" href="https://www.matter.toronto.edu/basic-content-page/about-alan">Alan Aspuru-Guzik</a><sup>1,2</sup>, 
+      <a style="color:#565656;font-size:1.5vw" href="http://www.cs.toronto.edu/~florian/">Florian Shkurti</a><sup>1,2</sup>, 
+      <a style="color:#565656;font-size:1.5vw" href="https://animesh.garg.tech/">Animesh Garg</a><sup>1,2,3</sup>
     </p>
     
-    <div class="col" style="font-size:0.9vw">
+    <div class="col" style="font-size:1vw">
                 <p><sup>1</sup>University of Toronto &nbsp;
                 <sup>2</sup>Vector Institute &nbsp;
                 <sup>3</sup>NVIDIA &nbsp;
@@ -45,23 +45,25 @@
       <div class="float-child-half">
         <h2 id = "Collection"> Automated Dataset collection </h2>
         <iframe width="500" height="300" src="https://www.youtube.com/embed/_HIetJ4mdlg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <p STYLE="text-align:left;font-size:10.0pt;margin-left:20px;margin-right:30px;"> A commodity RGB-D sensor is mounted to the robot arm's end effector. The scene with the transparent object is scanned from multiple viewing angles to collect the raw depth. AprilTags on the base template are detected for each image, and based on their 6DoF poses and the known translation between tags and objects, we can fit the 3D model of object(s) to their respective locations. The result of this automatic collection and annotation process is the RGB image, instance object segmentation, raw depth, ground truth depth.</p>
+        <p STYLE="text-align:left;font-size:10.0pt;margin-left:20px;margin-right:80px;"> A commodity RGB-D sensor is mounted to the robot arm's end effector. The scene with the transparent object is scanned from multiple viewing angles to collect the raw depth. AprilTags on the base template are detected for each image, and based on their 6DoF poses and the known translation between tags and objects, we can fit the 3D model of object(s) to their respective locations. The result of this automatic collection and annotation process is the RGB image, instance object segmentation, raw depth, ground truth depth.</p>
       </div>
 
     </div>
     </div>
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
     <h2 id = "Dataset"> Toronto Transparent Objects Depth Dataset (TODD) </h2>
     <p style="text-align:left;margin-left: 40px; margin-right: 40px;"> In total, Toronto Transparent Objects Depth Dataset (TODD) has 14,659 images of scenes which contains six glass beakers and flasks in five different backgrounds. Four objects are used in training set and the other two novel objects form the novel validation and test set. The training set has 10,302 images where validation and testing set combined has 4357 images. Every scene consists of up to three transparent objects with occlusion, which introduces additional complexity to the dataset. The objects and their placement are selected to mimic real-life transparent glassware, which can help to develop vision aware robots capable of manipulating transparent vessels.</p>
+
     <div class="float-container" style="margin-left: 70px; margin-right: 70px;">
+
         <div class="float-child">
-          <v-img :src="`${publicPath}cad.png`" contain></v-img>
+          <v-img :src="`${publicPath}cad.png` " max-width="300" max-height="200" contain></v-img>
         </div>
         <div class="float-child">
-          <v-img :src="`${publicPath}glass.png`" contain></v-img>
+          <v-img :src="`${publicPath}glass.png`" max-width="300" max-height="200" contain></v-img>
         </div>
         <div class="float-child">
-          <v-img :src="`${publicPath}filled.png`" contain></v-img>
+          <v-img :src="`${publicPath}filled.png`" max-width="300" max-height="200" contain></v-img>
         </div>
     </div>
 <br style="clear:both" />
@@ -166,8 +168,8 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 0px;
-  margin-left: 0px;
-  margin-right: 0px;
+  margin-left: auto;
+  margin-right: auto;
   max-width: 80rem;
 }
 #abs {
@@ -182,8 +184,12 @@ p {
 .float-container {
     padding: 0px;
     display: block;
+    margin-left: 40px;
+    margin-right:40px;
     margin-top: 2rem;
     margin-bottom: 2rem;
+    height: 100%;
+    width: 100%;
 }
 .container {
     height: 100%;
@@ -228,8 +234,8 @@ p {
 .right {
     border-color: transparent red transparent transparent;
 }
-h2   {color: #ff8800;}
-p    {color: #565656;}
+h2   {color: #ff8800;font-size:1.5vw}
+p    {color: #565656;font-size:1vw}
 
 /* Add a black background color to the top navigation */
 .topnav {
@@ -258,6 +264,14 @@ p    {color: #565656;}
 .topnav a.active {
   background-color: #ff8800;;
   color: white;
+}
+ul {
+  white-space: nowrap;
+}
+
+ul, li {
+  list-style: none;
+  display: inline;
 }
 
 </style>
