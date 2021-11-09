@@ -69,8 +69,8 @@
 <br style="clear:both" />
     <v-banner single-line>
     <h3 id = "Explorer"> Dataset Explorer </h3>
-    <span STYLE="font-size:12.0pt" >Select Object Type:</span>
-      <select v-model="objType" STYLE="font-size:12.0pt">
+    <span STYLE="font-size:12.0pt" >Select Object Type:   </span>
+      <select v-model="objType" STYLE="font-size:12.0pt; background-color:#4484CE; border-radius: 10px;">
         <option value=0>Beaker 0</option>
         <option value="1">Beaker 1</option>
         <option value="2">Beaker 2</option>
@@ -272,6 +272,18 @@ ul {
 ul, li {
   list-style: none;
   display: inline;
+}
+select{
+  width: 80px;
+  height: 27px;
+  padding: 5px;
+  color: white;
+  background-color: #4484CE;
+  text-align:center
+}
+select option { color: #ff8800; }
+select option:first-child{
+  color: green;
 }
 
 </style>
